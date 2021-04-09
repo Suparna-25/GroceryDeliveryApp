@@ -10,6 +10,10 @@ public interface CategoryRepository extends CrudRepository<Category,Long> {
 
 	Category findByCategoryId(Long cId);
 
+	boolean existsByCategoryName(String categoryName);
+
+	
+
 	
 
 }
