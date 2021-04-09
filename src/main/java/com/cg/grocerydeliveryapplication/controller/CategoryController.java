@@ -16,15 +16,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.grocerydeliveryapplication.domain.Category;
-import com.cg.grocerydeliveryapplication.service.CategoryService;
+import com.cg.grocerydeliveryapplication.service.CategoryServiceImpl;
 import com.cg.grocerydeliveryapplication.service.MapValidationErrorService;
 
 @RestController
-@RequestMapping
+@RequestMapping("/category")
 @CrossOrigin
 public class CategoryController {
 	@Autowired
-	private CategoryService categoryService;
+	private CategoryServiceImpl categoryService;
 	@Autowired
 	private MapValidationErrorService mapValidateErrorService;
 	

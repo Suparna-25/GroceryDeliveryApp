@@ -36,6 +36,16 @@ public class Category {
 	public Category() {
 		super();
 	}
+	
+	public Category(Long categoryId, @NotBlank(message = "Category name is required") String categoryName,
+			@Size(max = 100, message = "Description must be of maximum 100 characters") String categoryDescription) {
+		super();
+		this.categoryId = categoryId;
+		this.categoryName = categoryName;
+		this.categoryDescription = categoryDescription;
+		
+	}
+
 	@PrePersist
 	public void onCreated() {
 		this.created_At = new Date();
