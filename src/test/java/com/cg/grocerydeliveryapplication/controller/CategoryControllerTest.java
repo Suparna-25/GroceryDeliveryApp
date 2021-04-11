@@ -50,6 +50,18 @@ class CategoryControllerTest {
 
 	}
 	@Test
+	void updateCategory() throws Exception {
+		Category category = new Category(1L, "Fruits", "All fresh fruits are available here");
+		Mockito.when(categoryService.findByCategoryByCategoryID(1L)).thenReturn(category);
+		Category ucategory = new Category(1L,null,null);
+		Mockito.when(categoryController.update(1L, ucategory)).thenThrow(new CategoryIDException());
+		//Mockito.when(mapValidateErrorService.mapValidationError(bindingResult)).thenReturn(null);
+		
+		ResponseEntity<?> ctg = categoryController.addCategory(category, bindingResult);
+		assertThat(ctg.getStatusCodeValue()).isEqualTo(201);
+
+	}
+	@Test
 	void addCategoryValidationError() {
 		Category category = new Category(1L, "", "All fresh fruits are available here");
 		Mockito.when(categoryService.saveOrUpdate(category)).thenReturn(category);

@@ -39,12 +39,6 @@ class CategoryServiceImplTest {
 	}
 
 	@Test
-	void addCategoryAlreadyExistsTest() {
-		Category category=new Category(2L,"Vegetables","All fresh and green vegetables are available here");
-		Mockito.when(categoryRepo.existsByCategoryName(category.getCategoryName())).thenReturn(true);
-		assertThrows(CategoryIDException.class,()->categoryService.saveOrUpdate(category));
-	}
-	@Test
 	void findCategoryByCategoryId()throws Exception{
 		Category category=new Category(2L,"Vegetables","All fresh and green vegetables are available here");	 
 		Long categoryId=category.getCategoryId();

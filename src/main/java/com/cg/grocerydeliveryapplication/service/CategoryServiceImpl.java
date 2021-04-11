@@ -15,16 +15,7 @@ public class CategoryServiceImpl {
 private CategoryRepository categoryRepo;
 
 public Category saveOrUpdate(Category category) {
-	boolean exists=categoryRepo.existsByCategoryName(category.getCategoryName());
-	try {
-		if(exists)
-		{
-			throw new CategoryIDException("Category  already exists");
-		}
 		return categoryRepo.save(category);
-	} catch (Exception e) {
-		throw new CategoryIDException("Category  already exists");
-	}
    }
 
 

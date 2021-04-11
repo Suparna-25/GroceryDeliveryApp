@@ -1,0 +1,35 @@
+
+‰
+java:S2293A"YReplace the type specification in this constructor call with the diamond operator ("<>").(²ÿìüúÿÿÿÿHRMINORZ
+CODE_SMELL
+‹
+java:S22931"YReplace the type specification in this constructor call with the diamond operator ("<>").(÷³Ó„8ı—½ş‹/H2RMINORZ
+CODE_SMELL
+„
+java:S22938"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŠÇ´HRMINORZ
+CODE_SMELL
+}
+java:S4684,"@Replace this persistent entity with a simple POJO or DTO object.(ÌÚ¡øÿÿÿÿ8ŠÖÀş‹/H5RCRITICALZVULNERABILITY
+q
+java:S4684$"@Replace this persistent entity with a simple POJO or DTO object.(¾Ÿ·–HRCRITICALZVULNERABILITY
+Â
+java:S1130,"ŠRemove the declaration of thrown exception 'com.cg.grocerydeliveryapplication.exception.CategoryIDException' which is a runtime exception.(ÌÚ¡øÿÿÿÿ8ı—½ş‹/H1RMINORZ
+CODE_SMELL
+T
+java:S1452$"&Remove usage of generic wildcard type.(¾Ÿ·–HRCRITICALZ
+CODE_SMELL
+Y
+java:S1452,"&Remove usage of generic wildcard type.(ÌÚ¡øÿÿÿÿHRCRITICALZ
+CODE_SMELL
+ƒ
+java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.PatchMapping'.(£ø‹º8Ó™Æş‹/H8RMINORZ
+CODE_SMELL
+
+java:S2293)"YReplace the type specification in this constructor call with the diamond operator ("<>").(õÎ¯Íøÿÿÿÿ8À°˜ş‹/HRMINORZ
+CODE_SMELL
+`
+java:S1452?"&Remove usage of generic wildcard type.(Ìàüûÿÿÿÿ8ı—½ş‹/H3RCRITICALZ
+CODE_SMELL
+T
+java:S14526"&Remove usage of generic wildcard type.(¶Ø¥ÃHRCRITICALZ
+CODE_SMELL
