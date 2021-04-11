@@ -1,0 +1,69 @@
+package com.cg.grocerydeliveryapplication.service;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cg.grocerydeliveryapplication.domain.Product;
+import com.cg.grocerydeliveryapplication.exception.ProductIdNotFoundException;
+import com.cg.grocerydeliveryapplication.repository.ProductRepository;
+@Service
+public class ProductService implements IProductService {
+	@Autowired
+	private ProductRepository productRepository;
+
+	@Override
+	public Product addProducts(Product product) {
+		return productRepository.save(product);
+		
+	}
+
+	@Override
+	public boolean deleteProduct(int productId) {
+		//Product product=productRepository.findByProductId(productId);		
+		 productRepository.deleteById(productId);
+		return true;
+	}
+
+	@Override
+	public Product updateProduct(Product product,int productId) throws ProductIdNotFoundException {
+		Product reqProduct=productRepository.findByProductId(productId);
+		if(reqProduct!=null) {
+			reqProduct.setPrice(product.getPrice());
+			reqProduct.setQuantity(product.getQuantity());
+			 return productRepository.save(reqProduct);		 
+			  
+		  }
+		  else {
+				throw new ProductIdNotFoundException("Unable to get the product details. ");
+			}
+		  
+	}
+
+	@Override
+	public Product viewProductByProductId(int productId) throws ProductIdNotFoundException {
+		
+		Product product= productRepository.findByProductId(productId);
+		if(product!=null) {
+			
+			return product;
+			}
+			else {
+				throw new ProductIdNotFoundException("Product with id "+productId+" is not present.");
+			}
+	}
+
+	@Override
+	public Iterable<Product> viewProducts() {
+		
+		return productRepository.findAll();
+	}
+
+	@Override
+	public Product viewProductByCategory( String categoryName) {
+		Product reqProduct=productRepository.findByCategoryName(categoryName);
+		return reqProduct;
+	}
+
+	
+}
